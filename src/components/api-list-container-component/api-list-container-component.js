@@ -1,34 +1,28 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 import axios from 'axios';
 import ApiListItemContainerComponent from "../api-list-item-container-component/api-list-item-container-component";
 import './api-list-container-component.css';
 
 class ApiListContainerComponent extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            commits: []
-        };
-    }
-
     componentDidMount() {
         axios.get('https://api.github.com/repositories/19438/commits')
             .then((res) => {
-                this.setState({
-                    commits: res.data
-                });
+                this.props.dispatch({ type: 'SET_COMMITS', commits: res.data});;
             });
     }
 
     render() {
-        const commits = this.state.commits;
+        const commits = this.props.commits;
         const commitsList = commits.length ? (
             commits.map((commit) => {
                 return (
                     <div className="list-item-container" key={commit.sha}>
-                        <ApiListItemContainerComponent commit={commit} />
+                        <Link to={'commits/' + commit.sha}>
+                            <ApiListItemContainerComponent commit={commit} />
+                        </Link>
                     </div>
                 )
             })
@@ -44,4 +38,8 @@ class ApiListContainerComponent extends Component {
     }
 }
 
-export default ApiListContainerComponent;
+const mapStateToProps = (state) => ({
+    commits: state.commits
+});
+
+export default connect(mapStateToProps)(ApiListContainerComponent);

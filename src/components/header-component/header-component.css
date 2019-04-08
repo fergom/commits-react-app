@@ -5,8 +5,11 @@ h1 {
 .header-container {
     text-align: center;
     background-color: #282c34;
-    color: white;
     padding: 1vh;
+}
+
+.header-container a {
+    color: white;
 }
 
 @media (max-width: 576px) {
