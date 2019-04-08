@@ -8,3 +8,9 @@ h1 {
     color: white;
     padding: 1vh;
 }
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5em;
+    }
+}
