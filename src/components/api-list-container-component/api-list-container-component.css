@@ -3,19 +3,5 @@
 }
 
 .list-item-container {
-    display: inline-block;
-    width: 30%;
     padding: 10px;
-}
-
-@media (min-width: 577px) and (max-width: 992px) {
-    .list-item-container {
-        width: 40%;
-    }
-}
-
-@media (max-width: 576px) {
-    .list-item-container {
-        width: 100%;
-    }
 }

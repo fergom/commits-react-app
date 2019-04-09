@@ -3,24 +3,34 @@ import { Redirect, BrowserRouter as Router, Route, Switch } from "react-router-d
 import HeaderComponent from './components/header-component/header-component';
 import ApiListContainerComponent from './components/api-list-container-component/api-list-container-component';
 import ApiDetailComponent from "./components/api-detail-component/api-detail-component";
+import SpinnerComponent from "./components/spinner-component/spinner-component";
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faComment } from '@fortawesome/free-solid-svg-icons'
+import { faComment, faEnvelope, faEquals, faFileCode, faIdCardAlt, faMinusCircle, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
-library.add(faComment);
+library.add(faComment, faEnvelope, faEquals, faFileCode, faIdCardAlt, faMinusCircle, faPlusCircle, faUser);
 
 const initialState = {
-    commits: []
+    commits: [],
+    commitDetail: {}
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_COMMITS':
-            return {
+            return Object.assign({}, state, {
                 commits: action.commits
-            };
+            });
+        case 'SET_COMMIT_DETAIL':
+            return Object.assign({}, state, {
+                commitDetail: action.commitDetail
+            });
+        case 'LOADING':
+            return Object.assign({}, state, {
+                loading: action.loading
+            });
         default:
             return state;
     }
@@ -32,6 +42,7 @@ class App extends Component {
   render() {
     return (
         <Provider store={store}>
+            <SpinnerComponent />
           <Router>
             <header>
               <HeaderComponent />

@@ -2,7 +2,38 @@ h4 {
     margin-top: 10px;
 }
 
-img {
+.profile-container {
+    width: 100%;
+    display: flex;
+}
+
+.image-container {
     width: 50px;
+}
+
+.image-container img {
     border-radius: 50%;
+}
+
+.profile-info-container {
+    width: calc(100% - 50px);
+    padding-left: 10px;
+}
+
+.commit-info-slot {
+    height: 100%;
+    padding: 10px;
+    border: solid #CCCCCC 1px;
+}
+
+.fa-plus-circle {
+    color: #4cd964;
+}
+
+.fa-minus-circle {
+    color: #ff3b30;
+}
+
+.filename {
+    color: #007aff;
 }

@@ -8,10 +8,16 @@ import './api-list-container-component.css';
 class ApiListContainerComponent extends Component {
 
     componentDidMount() {
-        axios.get('https://api.github.com/repositories/19438/commits')
-            .then((res) => {
-                this.props.dispatch({ type: 'SET_COMMITS', commits: res.data});;
+        if (!this.props.commits.length) {
+            this.props.dispatch({ type: 'LOADING', loading: true });;
+            axios.get('https://api.github.com/repositories/19438/commits')
+                .then((res) => {
+                    this.props.dispatch({ type: 'SET_COMMITS', commits: res.data});;
+                    this.props.dispatch({ type: 'LOADING', loading: false });;
+                }).catch((error) => {
+                this.props.dispatch({ type: 'LOADING', loading: false });;
             });
+        }
     }
 
     render() {
@@ -19,7 +25,7 @@ class ApiListContainerComponent extends Component {
         const commitsList = commits.length ? (
             commits.map((commit) => {
                 return (
-                    <div className="list-item-container" key={commit.sha}>
+                    <div className="col-12 col-md-6 col-lg-4 list-item-container" key={commit.sha}>
                         <Link to={'commits/' + commit.sha}>
                             <ApiListItemContainerComponent commit={commit} />
                         </Link>
@@ -31,7 +37,7 @@ class ApiListContainerComponent extends Component {
         );
 
         return (
-            <div className="list-container centered">
+            <div className="row">
                 {commitsList}
             </div>
         );

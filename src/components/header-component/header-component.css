@@ -9,11 +9,11 @@ h1 {
 }
 
 .header-container a {
-    color: white;
+    color: white !important;
 }
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 1.5em;
+        font-size: 1.5em !important;
     }
 }
