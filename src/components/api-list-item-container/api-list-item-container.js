@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Moment from 'moment';
+import APP_CONSTANTS from '../../config/app-constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './api-list-item-container-component.css';
+import './api-list-item-container.css';
 
 class ApiListItemContainerComponent extends Component {
     render() {
@@ -14,7 +15,7 @@ class ApiListItemContainerComponent extends Component {
                 </div>
                 <div className="info-container">
                     <h4 title={ commit.commit.message }>{ commit.commit.message }</h4>
-                    <p>{ Moment(commit.commit.author.date).format('DD/MM/YYYY') }</p>
+                    <p>{ Moment(commit.commit.author.date).format(APP_CONSTANTS.FORMAT.DATE) }</p>
                     { commit.commit.comment_count } <FontAwesomeIcon icon="comment" />
                 </div>
             </div>

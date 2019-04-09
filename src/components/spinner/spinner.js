@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './spinner-component.css';
+import './spinner.css';
 
 class SpinnerComponent extends Component {
     render() {
