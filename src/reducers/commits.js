@@ -2,7 +2,8 @@ import APP_CONSTANTS from '../config/app-constants';
 
 const initialState = {
     commits: [],
-    commitDetail: {}
+    commitDetail: {},
+    loading: false
 };
 
 const commitsReducer = (state = initialState, action) => {
