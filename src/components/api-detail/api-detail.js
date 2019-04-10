@@ -119,8 +119,7 @@ class ApiDetailComponent extends Component {
         const commitDetail = this.props.commitDetail;
 
         return commitDetail.commit ? (
-            <div className="row">
-                { this.getGoBackTemplate() }
+            <div>
                 { this.getTitleTemplate(commitDetail) }
                 { this.getProfileSlot(commitDetail) }
                 { this.getStatsSlot(commitDetail) }
@@ -133,7 +132,10 @@ class ApiDetailComponent extends Component {
 
     render() {
         return (
-            this.getCommitTemplate()
+            <div className="row">
+                { this.getGoBackTemplate() }
+                { this.getCommitTemplate() }
+            </div>
         );
     }
 }

@@ -6,8 +6,7 @@ import { faComment } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faComment);
 
-
-const setUp = (commitMock) => {
+const mountComponent = (commitMock) => {
     return mount(<ApiListItemContainerComponent commit={commitMock} />);
 };
 
@@ -33,7 +32,7 @@ describe('ApiListItemComponent', () => {
 
     beforeEach(() => {
         mockCommit = generateCommitMock();
-        component = setUp(mockCommit);
+        component = mountComponent(mockCommit);
     });
 
     it('should render', () => {

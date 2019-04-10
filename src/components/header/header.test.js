@@ -17,7 +17,7 @@ describe('HeaderComponent', () => {
     });
 
     it('renders correctly', () => {
-        const wrapper = component.find('.header-container');
+        const wrapper = component.find('div');
         expect(wrapper.length).toBe(1);
     });
 
