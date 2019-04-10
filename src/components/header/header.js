@@ -6,7 +6,7 @@ import './header.scss';
 class HeaderComponent extends Component {
     render() {
         return (
-            <div className="centered blue-background padding">
+            <div className="centered blue-background padding full-width">
                 <Link to={ APP_CONSTANTS.ROUTES.ROOT }><h1 className="no-margin white">{ 'COMMITS REACT APP' }</h1></Link>
             </div>
         );

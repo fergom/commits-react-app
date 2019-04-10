@@ -55,6 +55,10 @@ $app-red: #FF3B30;
   padding: 10px;
 }
 
+.no-padding {
+  padding: 0 !important;
+}
+
 .padding-top {
   padding-top: 10px;
 }
@@ -89,4 +93,9 @@ $app-red: #FF3B30;
 
 .centered {
   text-align: center;
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
 }

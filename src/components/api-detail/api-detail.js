@@ -29,7 +29,7 @@ class ApiDetailComponent extends Component {
 
     getGoBackTemplate() {
         return (
-            <div className="col-12 margin-bottom go-back">
+            <div className="col-12 margin-bottom go-back no-padding">
                 <FontAwesomeIcon icon="chevron-left" />
                 <span className="margin-left">
                     <Link to={ APP_CONSTANTS.ROUTES.ROOT }>{ 'GO BACK' }</Link>
@@ -119,7 +119,7 @@ class ApiDetailComponent extends Component {
         const commitDetail = this.props.commitDetail;
 
         return commitDetail.commit ? (
-            <div>
+            <div className="row">
                 { this.getTitleTemplate(commitDetail) }
                 { this.getProfileSlot(commitDetail) }
                 { this.getStatsSlot(commitDetail) }
@@ -132,7 +132,7 @@ class ApiDetailComponent extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div>
                 { this.getGoBackTemplate() }
                 { this.getCommitTemplate() }
             </div>
