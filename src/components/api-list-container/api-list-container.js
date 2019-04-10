@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import APP_CONSTANTS from '../../config/app-constants';
 import ApiListItemContainerComponent from "../api-list-item-container/api-list-item-container";
-import './api-list-container.css';
+import './api-list-container.scss';
 
 class ApiListContainerComponent extends Component {
 
@@ -26,7 +26,7 @@ class ApiListContainerComponent extends Component {
         const commitsList = commits.length ? (
             commits.map((commit) => {
                 return (
-                    <div className="col-12 col-md-6 col-lg-4 list-item-container" key={commit.sha}>
+                    <div className="col-12 col-md-6 col-lg-4 padding" key={commit.sha}>
                         <Link to={APP_CONSTANTS.ROUTES.COMMITS + '/' + commit.sha}>
                             <ApiListItemContainerComponent commit={commit} />
                         </Link>

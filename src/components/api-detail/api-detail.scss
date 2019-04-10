@@ -1,0 +1,23 @@
+@import "../../styles/global";
+
+.profile-container {
+    @extend .full-width;
+    display: flex;
+}
+
+.image-container {
+    width: 50px;
+}
+
+.profile-info-container {
+    @extend .padding-left;
+    width: calc(100% - 50px);
+}
+
+.go-back {
+    color: #007aff;
+
+    a {
+        color: #007aff !important;
+    }
+}

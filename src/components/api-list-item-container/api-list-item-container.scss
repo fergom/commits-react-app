@@ -1,16 +1,14 @@
+@import "../../styles/global";
+
 .list-item {
+    @extend .padding;
+    @extend .thin-gray-border;
     display: flex;
-    padding: 10px;
-    border: solid #CCCCCC 1px;
     cursor: pointer;
 }
 
-p {
-    margin: 0 !important;
-}
-
 h4 {
-    margin: 0;
+    @extend .no-margin;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -20,13 +18,8 @@ h4 {
     width: 20%;
 }
 
-img {
-    width: 100%;
-    border-radius: 50%;
-}
-
 .info-container {
-    padding-left: 10px;
+    @extend .padding-left;
     width: calc(80% - 10px);
     text-align: left;
 }

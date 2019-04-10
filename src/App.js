@@ -10,7 +10,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronLeft, faComment, faEnvelope, faEquals, faFileCode, faIdCardAlt, faMinusCircle, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons'
-import './App.css';
+import './App.scss';
 
 library.add(faChevronLeft, faComment, faEnvelope, faEquals, faFileCode, faIdCardAlt, faMinusCircle, faPlusCircle, faUser);
 

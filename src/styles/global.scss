@@ -1,0 +1,92 @@
+$app-primary: #007AFF;
+$app-blue: #007AFF;
+$app-green: #4CD964;
+$app-red: #FF3B30;
+
+.blue {
+  color: $app-blue !important;
+}
+
+.blue-background {
+  background-color: $app-blue !important;
+}
+
+.red {
+  color: $app-red !important;
+}
+
+.green {
+  color: $app-green !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.margin {
+  margin: 10px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.margin-top {
+  margin-top: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
+
+.margin-left {
+  margin-left: 10px;
+}
+
+.margin-right {
+  margin-right: 10px;
+}
+
+.margin-vertical {
+  margin: 10px 0;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.padding-top {
+  padding-top: 10px;
+}
+
+.padding-bottom {
+  padding-bottom: 10px;
+}
+
+.padding-left {
+  padding-left: 10px;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.rounded-image {
+  border-radius: 50%;
+}
+
+.thin-gray-border {
+  border: solid #CCCCCC 1px;
+}
+
+.centered {
+  text-align: center;
+}
